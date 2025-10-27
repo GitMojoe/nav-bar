@@ -1,9 +1,16 @@
-const navbar = document.getElementById('navbar')
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
 
-function openSidebar(){
-navbar.classList.add('show')
+hamburger.addEventListener('click', ()=>{
+    this.classList.toggle('active');
+    if(mobileMenu.style.display==='block'){
+        mobileMenu.style.display='none';
+    }else{
+        mobileMenu.style.display='block';
+    }
+if(!isClickInsideNav && mobileMenu.style.display==='block'){
+    mobileMenu.style.display='none';
+    hamburger.classList.remove('active')
 }
 
-function closeSidebar(){
-navbar.classList.remove('show')
-}
+})

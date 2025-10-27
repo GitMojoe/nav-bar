@@ -63,28 +63,87 @@ nav a.active-link{
 nav a.accent-link{
     background-color: var(--accent-color);
 }
+.menu {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .menu li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            display: block;
+            transition: all 0.3s;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        .menu li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
 
-#open-sidebar-button{
+.hamburger{
     display: none;
-    background: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
     border: none;
-    padding: 1em;
-    margin-left: auto;
     cursor: pointer;
+    padding: 0;
 }
 
-#close-sidebar-button{
-    background: none;
-    border: none;
-    padding: 1em;
-    cursor: pointer;
+.hamburger span{
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--accent-color);
+    border-radius: 10px;
+    transition: all 0.3s ease;
 }
+
+.hamburger.active span:nth-child(1){
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2){
+    opacity:0;
+}
+.hamburger.active span:nth-child(3){
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.mobile-menu {
+            display: none;
+            list-style: none;
+            background: var(--primary-color);
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            padding: 0;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+      .mobile-menu li a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 1rem 2rem;
+            display: block;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background-color 0.3s;
+        } 
+
+        .mobile-menu li a:hover {
+            background-color: var(--accent-color);
+            padding-left: 2.5rem;
+        }
 
 
 @media screen and (max-width: 700px){
-    #open-sidebar-button, #close-sidebar-button{
-        display: block;
-    }
+  
     nav{
         position: fixed;
         top: 0;
@@ -95,13 +154,15 @@ nav a.accent-link{
         border-left: 1px solid var(--hover-color);
         transition: right 300ms ease-out;
     }
-    nav.show{
-        right: 0;
-    }
-    .material-symbols-rounded, .material-symbols-rounded-close {
-  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 40;
-}
+ 
+    .menu {
 
+        display: none;
+    }
+
+    .hamburger{
+        display: flex;
+    }
 
 
     nav ul{
