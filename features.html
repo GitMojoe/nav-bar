@@ -5,15 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+        <script src="script.js" defer></script>
+
 </head>
 <body>
-        <nav>
-            <ul>
+      <nav>
+             <a href="#" class="logo">NavBrand</a>
+            <ul class="menu">
+               
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="features.html">Features</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li><a class="accent-link" href="login.html">Login</a></li>
+            </ul>
+
+            <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+             </button>
+
+             <ul class="mobile-menu" id="mobileMenu">
+               
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a  href="login.html">Login</a></li>
             </ul>
         </nav>
         <h1>Features</h1>
